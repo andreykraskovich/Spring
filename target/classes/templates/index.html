@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo List</title>
+</head>
+<body>
+<h1>Список моих дел (<span th:text="${todoCount}">0</span>)</h1>
+
+<div id="todos-list">
+    <div th:each="todo : ${todos}">
+        <a href="#" class="todo-link" th:attr="data-id=${todo.id}" th:text="${todo.name}"></a>
+    </div>
+</div>
+
+<p th:text="${createdString}"></p>
+
+</body>
+</html>
